@@ -1,18 +1,21 @@
 package Vista;
+
 import java.awt.Dimension;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class JIFAyuda extends javax.swing.JInternalFrame {
-private String enlace1 = "https://drive.google.com/drive/folders/1xKXxc7Vmk3KriwtGdQeHWe9UQM6vV1RS?usp=sharing";
-private String enlaceReu = "https://us05web.zoom.us/j/98775413904?pwd=M1o5dnMyL2ZjbCsxUlpwZ2JQT2FxUT09";
-private String enlaceT1 = "https://drive.google.com/drive/folders/1e8JdVUZfJyAuR0T3nfLdGnNQEncVu_B7?usp=sharing";
+
+    private String enlace1 = "https://drive.google.com/drive/folders/1xKXxc7Vmk3KriwtGdQeHWe9UQM6vV1RS?usp=sharing";
+    private String enlaceReu = "https://us05web.zoom.us/j/98775413904?pwd=M1o5dnMyL2ZjbCsxUlpwZ2JQT2FxUT09";
+    private String enlaceT1 = "https://drive.google.com/drive/folders/1e8JdVUZfJyAuR0T3nfLdGnNQEncVu_B7?usp=sharing";
 
     public JIFAyuda() {
         initComponents();
         initComponents();
         this.setSize(new Dimension(848, 533));
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -133,42 +136,42 @@ private String enlaceT1 = "https://drive.google.com/drive/folders/1e8JdVUZfJyAuR
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
-        if(java.awt.Desktop.isDesktopSupported()){
+        if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 try {
                     java.net.URI uri = new java.net.URI(enlace1);
                     desktop.browse(uri);
                 } catch (URISyntaxException | IOException e) {
-                    
+
                 }
             }
         }
     }//GEN-LAST:event_btnPDFActionPerformed
 
     private void btnVideo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVideo2ActionPerformed
-        if(java.awt.Desktop.isDesktopSupported()){
+        if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 try {
                     java.net.URI uri = new java.net.URI(enlaceT1);
                     desktop.browse(uri);
                 } catch (URISyntaxException | IOException e) {
-                    
+
                 }
             }
         }
     }//GEN-LAST:event_btnVideo2ActionPerformed
 
     private void btnZoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZoomActionPerformed
-        if(java.awt.Desktop.isDesktopSupported()){
+        if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 try {
                     java.net.URI uri = new java.net.URI(enlaceReu);
                     desktop.browse(uri);
                 } catch (URISyntaxException | IOException e) {
-                    
+
                 }
             }
         }

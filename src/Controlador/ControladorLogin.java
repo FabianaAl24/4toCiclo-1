@@ -1,4 +1,5 @@
 package Controlador;
+
 import Modelo.*;
 import Procesos.ProcesosLogin;
 import Vista.*;
@@ -8,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class ControladorLogin implements ActionListener {
+
     Login vista;
     private int fallas = 0;
     private final int intentos = 3;
@@ -32,11 +34,13 @@ public class ControladorLogin implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista.btnIniciar && !vista.btnIniciar.isEnabled()) {return;}
+        if (e.getSource() == vista.btnIniciar && !vista.btnIniciar.isEnabled()) {
+            return;
+        }
         if (e.getSource() == vista.btnIniciar) {
             Usuario us = new Usuario();
             String user = vista.txtUsuario.getText();
-            String pass = String.valueOf(vista.psPass.getPassword());           
+            String pass = String.valueOf(vista.psPass.getPassword());
             if (user.equals("grupo") && pass.equals("12345678")) {
                 Menu menu = new Menu();
                 menu.setVisible(true);
@@ -53,20 +57,21 @@ public class ControladorLogin implements ActionListener {
         }
     }
 
-    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt){
-        if(vista.txtUsuario.getText().equals("Ingrese su nombre de usuario")){
-           vista.txtUsuario.setText("");
-           vista.txtUsuario.setForeground(Color.white);
+    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {
+        if (vista.txtUsuario.getText().equals("Ingrese su nombre de usuario")) {
+            vista.txtUsuario.setText("");
+            vista.txtUsuario.setForeground(Color.white);
         }
         if (String.valueOf(vista.psPass.getPassword()).isEmpty()) {
             vista.psPass.setText("********");
             vista.psPass.setForeground(Color.gray);
         }
-    }    
+    }
+
     private void psPassMouseClicked(java.awt.event.MouseEvent evt) {
-        if(String.valueOf(vista.psPass.getPassword()).equals("********")){
-           vista.psPass.setText("");
-           vista.psPass.setForeground(Color.white);
+        if (String.valueOf(vista.psPass.getPassword()).equals("********")) {
+            vista.psPass.setText("");
+            vista.psPass.setForeground(Color.white);
         }
         if (vista.txtUsuario.getText().isEmpty()) {
             vista.txtUsuario.setText("Ingrese su nombre de usuario");

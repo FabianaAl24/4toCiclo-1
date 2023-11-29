@@ -9,14 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 public class CuotaMatriculaDAO {
     private static final String CUOTAS_FILE = "src/com/archivos_txt/cuotasMatricula.txt";
     private List<CuotaMatricula> cuotasMatricula;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private static PagoCuotaMatriculaDAO pagoCuotaMatriculaDAO = new PagoCuotaMatriculaDAO();
     private static EstudianteDAO estudianteDAO;
-
     public CuotaMatriculaDAO() {
         cuotasMatricula = new ArrayList<>();
         ArchivoUtil.crearCarpeta(CUOTAS_FILE);

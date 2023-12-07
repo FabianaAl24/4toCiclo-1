@@ -74,20 +74,9 @@ public class ControladorPagos implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == p.btnBuscar) {
-            int idP = Mensajes.M2("Ingrese el ID del Alumno a buscar...");
-            al = (Alumno) crp.ConsultarAlumno(idP);
-            if (Objects.isNull(al)) {
-              Mensajes.M1("El id " + idP + " no existe en la tabla Alumno...");
-            } else {
-                p.txtCodEst.setText(Integer.toString(al.getCodAlm()));
-                p.txtEstudiante.setText(al.getNombre());
-                p.cbxGrado.setSelectedItem(al.getGrd());
-                p.cbxSeccion.setSelectedItem(al.getSec());
-                ProcesosFrmIPagos.Estado2(p);
-                crp = new DAO_Pago();
-                MostrarPago(al);
-            }
+            
         }
+
         if (e.getSource() == p.btnPago) {
             boolean camposLlenos = true;
             

@@ -1,2 +1,0 @@
-COD1,Mariori,Carranza Felix,76420854,953687459,Quinto,A
-COD2,Luis,Carranza Felix,78220854,953997459,Cuarto,B

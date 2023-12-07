@@ -61,24 +61,5 @@ public class ControladorLogin implements ActionListener {
         }
     }
 
-    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt){
-        if(vista.txtUsuario.getText().equals("Ingrese su nombre de usuario")){
-           vista.txtUsuario.setText("");
-           vista.txtUsuario.setForeground(Color.white);
-        }
-        if (String.valueOf(vista.psPass.getPassword()).isEmpty()) {
-            vista.psPass.setText("********");
-            vista.psPass.setForeground(Color.gray);
-        }
-    }    
-    private void psPassMouseClicked(java.awt.event.MouseEvent evt) {
-        if(String.valueOf(vista.psPass.getPassword()).equals("********")){
-           vista.psPass.setText("");
-           vista.psPass.setForeground(Color.white);
-        }
-        if (vista.txtUsuario.getText().isEmpty()) {
-            vista.txtUsuario.setText("Ingrese su nombre de usuario");
-            vista.txtUsuario.setForeground(Color.gray);
-        }
-    }
+
 }

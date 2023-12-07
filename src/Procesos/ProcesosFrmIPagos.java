@@ -29,6 +29,10 @@ public class ProcesosFrmIPagos {
     }
     
     public static Pago LeerPago(JIFPago fp) {
-        
+        Pago p = new Pago();
+        p.setCuenta(fp.txtNTarjeta.getText());
+        P.setMMAA(fp.txMMAA.getText());
+        p.setCvv(fp.txtCVV.getTexto());
+        return p;
     }
 }

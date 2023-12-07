@@ -56,6 +56,11 @@ public class Login extends javax.swing.JFrame {
         psPass.setForeground(new java.awt.Color(102, 102, 102));
         psPass.setText("********");
         psPass.setBorder(null);
+        psPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                psPassActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FondoLoginLayout = new javax.swing.GroupLayout(FondoLogin);
         FondoLogin.setLayout(FondoLoginLayout);
@@ -127,7 +132,8 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void psPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psPassActionPerformed
+    }//GEN-LAST:event_psPassActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -1,13 +1,9 @@
 package Vista;
-import Modelo.Messenger;
-import java.awt.Dimension;
 
 public class JIFMensajeria extends javax.swing.JInternalFrame {
 
     public JIFMensajeria() {
         initComponents();
-        initComponents();
-        this.setSize(new Dimension(848, 533));
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -130,28 +126,20 @@ public class JIFMensajeria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarActionPerformed
-        Messenger.iniciarcliente(this.txtIp.getText());
     }//GEN-LAST:event_btnConectarActionPerformed
-
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        Messenger.Cliente.enviarMSG(
-            this.txtNombre.getText() + " Dice: " + this.txtMensaje.getText());
-            this.txaHistorial.setText(this.txaHistorial.getText()+"\n"+
-            this.txtNombre.getText() + " Dice: " + this.txtMensaje.getText());
-            txtMensaje.setText("");
     }//GEN-LAST:event_btnEnviarActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondolb;
     private javax.swing.JPanel Mensaje;
-    private javax.swing.JButton btnConectar;
-    private javax.swing.JButton btnEnviar;
+    public javax.swing.JButton btnConectar;
+    public javax.swing.JButton btnEnviar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTextArea txaHistorial;
-    private javax.swing.JTextField txtIp;
-    private javax.swing.JTextField txtMensaje;
-    private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtIp;
+    public javax.swing.JTextField txtMensaje;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

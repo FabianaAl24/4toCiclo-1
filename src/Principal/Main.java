@@ -1,15 +1,31 @@
 package Principal;
-import Controlador.ControladorLogin;
+import Controlador.*;
 import Vista.*;
 
 public class Main {
-    public static Login f1;
+    public static JIFInicio fini;
+    public static ControladorInicio ctrl_fini;
+    
+    public static JIFMatricula fma;
+    public static ControladorMatricula ctrl_fma;
+    
+    public static JIFPago fp;
+    public static ControladorPagos ctrl_fp;
+    
+    public static JIFMensajeria fme;
+    public static ControladorMensajeria ctrl_fme;
+    
+    public static JIFAyuda fa;
+    public static ControladorAyuda ctrl_fa;
+    //MenuItem
+    
+    public static Menu fm;
+    
+    public static Login fl;
+    public static ControladorLogin ctrl_fl;
 
     public static void main(String[] args) {
-        f1 = new Login();
-        ControladorLogin log = new ControladorLogin(f1);
-        
-        JIFAyuda fa = new JIFAyuda();
-        fa.setVisible(true);
+        fl = new Login();
+        ctrl_fl = new ControladorLogin(fl);
     }
 }

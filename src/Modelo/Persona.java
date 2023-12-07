@@ -1,29 +1,29 @@
 package Modelo;
 
 public abstract class Persona {
-    private String Nombre;
-    private String Apellido;
-    private int DNI;
-    private String Telefono;
+    private int dni;
+    private String nombre;
+    private String genero;
+    private String estado;
     
     public Persona(){}
 
-    public Persona(String Nombre, String Apellido, int DNI, String Telefono) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.DNI = DNI;
-        this.Telefono = Telefono;
+    public Persona(int dni, String nombre, String genero, String estado) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.estado = estado;
     }
+    
+    public int getDNI() {return dni;}
+    public void setDNI(int dni) {this.dni = dni;}
+    
+    public String getNombre() {return nombre;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
-    public String getNombre() {return Nombre;}
-    public void setNombre(String Nombre) {this.Nombre = Nombre;}
-
-    public String getApellido() {return Apellido;}
-    public void setApellido(String Apellido) {this.Apellido = Apellido;}
-
-    public int getDNI() {return DNI;}
-    public void setDNI(int DNI) {this.DNI = DNI;}
-
-    public String getTelefono() {return Telefono;}
-    public void setTelefono(String Telefono) {this.Telefono = Telefono;}
+    public String getGenero() {return genero;}
+    public void setGenero(String genero) {this.genero = genero;}
+    
+    public String getEstado() {return estado;}
+    public void setEstado(String estado) {this.estado = estado;}
 }

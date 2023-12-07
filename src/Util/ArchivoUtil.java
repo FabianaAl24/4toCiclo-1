@@ -1,4 +1,5 @@
 package Util;
+import Formatos.Mensajes;
 import java.io.File;
 import java.io.IOException;
 
@@ -9,21 +10,22 @@ public class ArchivoUtil {
 
         if (!directorio.exists()) {
             if (directorio.mkdirs()) {
-                System.out.println("Directorio creado con éxito.");
+                Mensajes.M1("Directorio creado con exito...");
             } else {
-                System.err.println("No se pudo crear el directorio.");
+                Mensajes.M1("No se pudo crear el directorio...");
             }
         }
+
         try {
             if (!archivo.exists()) {
                 if (archivo.createNewFile()) {
-                    System.out.println("Archivo creado con éxito.");
+                    Mensajes.M1("Archivo creado con exito...");
                 } else {
-                    System.err.println("No se pudo crear el archivo.");
+                    Mensajes.M1("No se pudo crear el archivo...");
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al crear el archivo: " + e.getMessage());
+            Mensajes.M1("Error al crear el archivo: " + e.getMessage());
         }
     }
 }

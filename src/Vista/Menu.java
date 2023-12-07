@@ -1,8 +1,6 @@
 package Vista;
-import Controlador.ControladorPago;
+import Controlador.*;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.JInternalFrame;
 
 public class Menu extends javax.swing.JFrame {
@@ -19,6 +17,7 @@ public class Menu extends javax.swing.JFrame {
        this.escritorio.add(internal);
        internal.setVisible(true);
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -225,6 +224,8 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 860, 60));
 
+        escritorio.setBackground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -244,27 +245,31 @@ public class Menu extends javax.swing.JFrame {
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         JIFInicio fi =  new JIFInicio();
         this.MostrarEnEscritorio(fi);
+        ControladorInicio ini = new ControladorInicio(fi);
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatriculaActionPerformed
         JIFMatricula fm =  new JIFMatricula();
         this.MostrarEnEscritorio(fm);
+        ControladorMatricula ma = new ControladorMatricula(fm);
     }//GEN-LAST:event_btnMatriculaActionPerformed
 
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
         JIFPago fp =  new JIFPago();
         this.MostrarEnEscritorio(fp);
-        ControladorPago log = new ControladorPago(fp); 
+        ControladorPagos p = new ControladorPagos(fp); 
     }//GEN-LAST:event_btnPagosActionPerformed
 
     private void btnMensajeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMensajeriaActionPerformed
         JIFMensajeria fm =  new JIFMensajeria();
         this.MostrarEnEscritorio(fm);
+        ControladorMensajeria me = new ControladorMensajeria(fm);
     }//GEN-LAST:event_btnMensajeriaActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
         JIFAyuda fa =  new JIFAyuda();
         this.MostrarEnEscritorio(fa);
+        ControladorAyuda a = new ControladorAyuda(fa);
     }//GEN-LAST:event_btnAyudaActionPerformed
     public static void main(String args[]) {
          java.awt.EventQueue.invokeLater(new Runnable() {
@@ -274,12 +279,12 @@ public class Menu extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAyuda;
-    private javax.swing.JButton btnInicio;
-    private javax.swing.JButton btnMatricula;
-    private javax.swing.JButton btnMensajeria;
-    private javax.swing.JButton btnPagos;
-    private javax.swing.JDesktopPane escritorio;
+    public javax.swing.JButton btnAyuda;
+    public javax.swing.JButton btnInicio;
+    public javax.swing.JButton btnMatricula;
+    public javax.swing.JButton btnMensajeria;
+    public javax.swing.JButton btnPagos;
+    public javax.swing.JDesktopPane escritorio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

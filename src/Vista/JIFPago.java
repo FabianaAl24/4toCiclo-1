@@ -1,46 +1,10 @@
 package Vista;
 
-import java.awt.Dimension;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 public class JIFPago extends javax.swing.JInternalFrame {
-
-    String columnas[] = {"", "id","Descripcion", "Fecha de Inicio", "Fecha de Vencimiento", "Monto"};
-    boolean ColumnasEditables[] = {true,false, false, false, false, false};
-    Class tipo[] = new Class[]{java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class};
-    public DefaultTableModel modelP = new DefaultTableModel() {
-        public boolean isCellEditable(int row, int col) {
-            return ColumnasEditables[col];
-        }
-
-        public Class getColumnClass(int index) {
-            return tipo[index];
-        }
-    };
 
     public JIFPago() {
         initComponents();
-        this.setSize(new Dimension(848, 533));
-        modelP.setColumnIdentifiers(columnas);
-        tbDatos.setModel(modelP);
     }
-    
-    private boolean Seleccionados(int pos) {
-        int contador = 0;
-        boolean bandera = true;
-        for (int i = 0; i < modelP.getRowCount(); i++) {
-            boolean seleccion = (boolean) modelP.getValueAt(i, pos);
-            if (seleccion) {
-                contador++;
-            }
-        }
-        if (contador == 0) {
-            bandera = false;
-        }
-        return bandera;
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -109,15 +73,17 @@ public class JIFPago extends javax.swing.JInternalFrame {
 
         txtCodEst.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
 
+        txtEstudiante.setEditable(false);
         txtEstudiante.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
 
-        cbxFormPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Tarjeta", "--" }));
+        cbxFormPago.setEditable(true);
+        cbxFormPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Seleccionar---", "Banca movil", "Efectivo" }));
         cbxFormPago.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.black, java.awt.Color.white, java.awt.Color.white));
 
-        cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "A", "B" }));
+        cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Seleccione --", "A", "B", "U" }));
         cbxSeccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.black, java.awt.Color.white, java.awt.Color.white));
 
-        cbxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto" }));
+        cbxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Seleccione --", "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto" }));
         cbxGrado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.black, java.awt.Color.white, java.awt.Color.white));
 
         txtNTarjeta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
@@ -204,16 +170,16 @@ public class JIFPago extends javax.swing.JInternalFrame {
                                         .addGap(5, 5, 5)
                                         .addComponent(btnBuscar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(MensajeLayout.createSequentialGroup()
-                                                .addGap(13, 13, 13)
                                                 .addComponent(jLabel6)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(cbxGrado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(MensajeLayout.createSequentialGroup()
                                                 .addComponent(jLabel5)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(cbxSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(cbxSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(6, 6, 6))
                                     .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(MensajeLayout.createSequentialGroup()
                                             .addComponent(jLabel4)
@@ -241,7 +207,7 @@ public class JIFPago extends javax.swing.JInternalFrame {
             .addGroup(MensajeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(MensajeLayout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -250,23 +216,21 @@ public class JIFPago extends javax.swing.JInternalFrame {
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2))
                     .addGroup(MensajeLayout.createSequentialGroup()
-                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MensajeLayout.createSequentialGroup()
-                                .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(cbxSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(cbxGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(MensajeLayout.createSequentialGroup()
-                                .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCodEst, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCodEst, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)
-                        .addComponent(cbxFormPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cbxFormPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MensajeLayout.createSequentialGroup()
+                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(cbxGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(cbxSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(MensajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -294,25 +258,14 @@ public class JIFPago extends javax.swing.JInternalFrame {
         getContentPane().add(Mensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, 480));
 
         Fondolb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/img/Fondo.png"))); // NOI18N
-        getContentPane().add(Fondolb, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(Fondolb, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tbDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDatosMouseClicked
-        Double total = 0d;
-        if (Seleccionados(0)) {
-            for (int i = 0; i < modelP.getRowCount(); i++) {
-                boolean sel = (boolean) modelP.getValueAt(i, 0);
-                Double monto = (Double) modelP.getValueAt(i, 5);
-                if (sel) {
-                   total = total + monto;    
-                }
-            }
-        }
-        txtTotal.setText(String.valueOf(total));
+        
     }//GEN-LAST:event_tbDatosMouseClicked
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondolb;
     private javax.swing.JPanel Mensaje;
@@ -333,12 +286,12 @@ public class JIFPago extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable tbDatos;
-    private javax.swing.JTextField txtCVV;
+    public static javax.swing.JTable tbDatos;
+    public javax.swing.JTextField txtCVV;
     public javax.swing.JTextField txtCodEst;
     public javax.swing.JTextField txtEstudiante;
-    private javax.swing.JTextField txtMMAA;
-    private javax.swing.JTextField txtNTarjeta;
+    public javax.swing.JTextField txtMMAA;
+    public javax.swing.JTextField txtNTarjeta;
     public javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,12 +1,9 @@
 package Vista;
-import java.awt.Dimension;
 
 public class JIFInicio extends javax.swing.JInternalFrame {
 
     public JIFInicio() {
         initComponents();
-        initComponents();
-        this.setSize(new Dimension(848, 533));
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

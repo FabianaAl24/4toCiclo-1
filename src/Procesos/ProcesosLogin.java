@@ -9,10 +9,18 @@ public class ProcesosLogin {
         f1.setLocationRelativeTo(null);
     }
     
+    public static void Estado1(Login fl) {
+        fl.btnIniciar.setEnabled(true);
+    }
+    
+    public static void Estado2(Login fl) {
+        fl.btnIniciar.setEnabled(false);
+    }
+    
     public static Usuario LeerUser(Login f1){
         Usuario us = new Usuario();
-        us.setUser(f1.txtUsuario.getText());
-        us.setPass(String.valueOf(f1.psPass.getPassword()));
+        us.setUsuario(f1.txtUsuario.getText());
+        us.setContraseña(String.valueOf(f1.psPass.getPassword()));
         return us;
     }
 }

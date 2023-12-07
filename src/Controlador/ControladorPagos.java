@@ -77,7 +77,7 @@ public class ControladorPagos implements ActionListener, MouseListener {
             int idP = Mensajes.M2("Ingrese el ID del Alumno a buscar...");
             al = (Alumno) crp.ConsultarAlumno(idP);
             if (Objects.isNull(al)) {
-                Mensajes.M1("El id " + idP + " no existe en la tabla Alumno...");
+              Mensajes.M1("El id " + idP + " no existe en la tabla Alumno...");
             } else {
                 p.txtCodEst.setText(Integer.toString(al.getCodAlm()));
                 p.txtEstudiante.setText(al.getNombre());

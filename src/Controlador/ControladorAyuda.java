@@ -25,7 +25,19 @@ public class ControladorAyuda implements ActionListener {
         ProcesosFrmIAyuda.Estado(a);
     }
     
-    
+    private void abrirEnlace(String enlace) {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace);
+                    desktop.browse(uri);
+                } catch (URISyntaxException | IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+    }    
     
        @Override
     public void actionPerformed(ActionEvent e) {

@@ -31,7 +31,10 @@ public class ControladorMensajeria implements ActionListener {
         }
         
         if (e.getSource() == m.btnEnviar) {
-            
+            crm.Cliente.enviarMSG(m.txtNombre.getText() + " Dice: " + m.txtMensaje.getText());
+            m.txaHistorial.setText(m.txaHistorial.getText() + "\n" + 
+                                   m.txtNombre.getText() + " Dice: " + m.txtMensaje.getText());
+            ProcesosFrmIMensaje.LimpiarEntradas(m);
         }
     }
 }

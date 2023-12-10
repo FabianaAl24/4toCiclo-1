@@ -33,7 +33,16 @@ public class ControladorMatricula implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ma.btnRegistrar) {
-            
+            if (!ma.txtAlumno.getText().trim().isEmpty() && !ma.txtDNI.getText().trim().isEmpty()
+                && !ma.cbxGrado.getSelectedItem().toString().trim().isEmpty()
+                && !ma.cbxSeccion.getSelectedItem().toString().trim().isEmpty()
+                && ma.dcFecha.getDate() != null && !ma.cbxGenero.getSelectedItem().toString().trim().isEmpty()
+                && !ma.txtCodAlumno.getText().trim().isEmpty()) {
+                al = ProcesosFrmIMatricula.LeerMatricula(ma);
+                crma = new DAO_Matricula();
+                crma.InsertarMatricula(al);
+                ActualizarForma();
+            }
         }
         
         if (e.getSource() == ma.btnImprimir) {
